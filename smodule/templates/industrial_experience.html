@@ -1,0 +1,134 @@
+<!-- <form method="POST">
+    {% csrf_token %}
+    <label>Do you have industrial experience?</label>
+    <input type="radio" name="experience" value="yes"> Yes
+    <input type="radio" name="experience" value="no"> No
+    
+    <div id="company_name_field" style="display: none;">
+        <label for="company_name">Enter your company name:</label>
+        <input type="text" name="company_name">
+    </div>
+
+    <button type="submit">Next</button>
+</form>
+
+<script>
+    // Show or hide company name field based on "Yes" selection
+    document.querySelectorAll('input[name="experience"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const companyField = document.getElementById('company_name_field');
+            if (this.value === 'yes') {
+                companyField.style.display = 'block';
+            } else {
+                companyField.style.display = 'none';
+            }
+        });
+    });
+</script> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industrial Experience</title>
+</head>
+<body>
+    <h1>Do you have industrial experience?</h1>
+    
+    <form method="POST">
+        {% csrf_token %}
+        <input type="radio" name="experience" value="yes" id="experience_yes"> Yes
+        <input type="radio" name="experience" value="no" id="experience_no"> No
+    </form>
+
+    <script>
+        // Redirect to company details when "Yes" is selected
+        document.getElementById('experience_yes').addEventListener('click', function() {
+            document.forms[0].submit();  // Auto-submit form to redirect to company details
+        });
+
+        // Redirect to preferences page when "No" is selected
+        document.getElementById('experience_no').addEventListener('click', function() {
+            document.forms[0].submit();  // Auto-submit form to redirect to preferences
+        });
+    </script>
+</body>
+</html>
+
+ -->
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industrial Experience</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            width: 300px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Did you get selected for any industrial intern</h1>
+    
+    <form method="POST">
+        {% csrf_token %}
+        <label>
+            <input type="radio" name="experience" value="yes" id="experience_yes"> Yes
+        </label>
+        <label>
+            <input type="radio" name="experience" value="no" id="experience_no"> No
+        </label>
+    </form>
+
+    <script>
+        // Redirect to company details when "Yes" is selected
+        document.getElementById('experience_yes').addEventListener('click', function() {
+            document.forms[0].submit();  // Auto-submit form to redirect to company details
+        });
+
+        // Redirect to preferences page when "No" is selected
+        document.getElementById('experience_no').addEventListener('click', function() {
+            document.forms[0].submit();  // Auto-submit form to redirect to preferences
+        });
+    </script>
+</div>
+
+</body>
+</html>

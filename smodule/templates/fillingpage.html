@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>here you can select your options</h1>
+    {% for option in o %}
+    <form id="dropdown" method="post">
+        {% csrf_token %}
+        <label for="options">Choose an option:</label>
+        <select id="options" name="options">
+            {% for option in o %}
+           <br> <option value="{{ option }}">{{ option }}</option>
+            {% endfor %}  
+        </select>
+        <br>
+        {% endfor %}
+        <button type="submit">Submit</button>
+    </form>
+    
+    
+
+
+</body>
+</html>
+
+

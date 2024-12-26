@@ -1,0 +1,135 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Company Details</title>
+</head>
+<body>
+    <h1>Company Details</h1>
+    
+    <form method="POST">
+        {% csrf_token %}
+        <label for="company_name">Enter your company name:</label>
+        <input type="text" name="company_name" id="company_name" required>
+        
+        <br><br>
+        
+        <label for="company_role">Enter your role in the company:</label>
+        <input type="text" name="company_role" id="company_role" required>
+        
+        <br><br>
+        
+        <label for="years_of_experience">Years of experience:</label>
+        <input type="number" name="years_of_experience" id="years_of_experience" min="0" step="1" required>
+        
+        <br><br>
+        
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if message %}
+        <p style="color: red;">{{ message }}</p>
+    {% endif %}
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Company Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: left;
+            width: 400px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-size: 16px;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .error-message {
+            color: red;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Company Details</h1>
+    
+    <form method="POST">
+        {% csrf_token %}
+        
+        <label for="company_name">Enter your company name:</label>
+        <input type="text" name="company_name" id="company_name" required>
+        
+        <label for="company_role">Enter your role in the company:</label>
+        <input type="text" name="company_role" id="company_role" required>
+        
+        <label for="duration">Duration:</label>
+        <input type="number" name="years_of_experience" id="years_of_experience" min="0" step="1" required>
+        
+        <button type="submit">Submit</button>
+        
+        {% if message %}
+            <p class="error-message">{{ message }}</p>
+        {% endif %}
+    </form>
+</div>
+
+</body>
+</html>

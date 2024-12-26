@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault(); // Prevent form from submitting the traditional way
+            const selectedOption = document.getElementById("options").value;
+            
+            if (selectedOption === "option2") { // If "No" is selected
+                window.location.href = "fillingpage.html"; // Redirect to another page
+            } else if (selectedOption === "option1") { // If "Yes" is selected
+               //alert("You are not eligible for further process.");  
+                document.getElementById("message").textContent = "You are not eligible for further process.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Hello are you into industrial intern</h1>
+    <form id="dropdownForm" onsubmit="handleSubmit(event)">
+        <label for="options">Choose an option:</label>
+        <select id="options" name="options">
+            <option value="option1">Yes</option>
+            <option value="option2">No</option>
+            
+        </select>
+        <button type="submit">Submit</button>
+    </form> 
+    <p id="message" style="color: red; font-weight: bold;"></p>
+  
+</body>
+</html>
+
+
